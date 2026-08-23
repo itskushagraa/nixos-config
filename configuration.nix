@@ -4,6 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ./modules/desktop.nix
+    ./modules/development.nix
     ./modules/maintenance.nix
     ./modules/packages.nix
   ];
@@ -25,18 +26,6 @@
   # Regional settings
   time.timeZone = "America/Vancouver";
   i18n.defaultLocale = "en_CA.UTF-8";
-
-  # Docker
-  virtualisation.docker = {
-    enable = true;
-    enableOnBoot = true;
-  };
-
-  # Project environments
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-  };
 
   # User
   users.users.kush = {

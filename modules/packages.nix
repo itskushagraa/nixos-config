@@ -86,21 +86,5 @@
     file
     which
     killall
-
-    # Development
-    gh
-    nodejs_22
-    pnpm
-    python3
-    uv
-    gcc
-    clang
-    cmake
-    gnumake
-    pkg-config
-    rustup
-
-    # Containers
-    docker-compose
   ];
 }
