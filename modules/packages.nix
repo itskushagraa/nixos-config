@@ -53,7 +53,6 @@
     google-chrome
     gnome-screenshot
     spotify
-    discord
 
     # System inspection
     pciutils
@@ -75,7 +74,6 @@
     fzf
     zoxide
     starship
-    wl-clipboard
     direnv
     nix-direnv
 
