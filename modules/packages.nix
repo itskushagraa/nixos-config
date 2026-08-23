@@ -3,8 +3,6 @@
 {
   nixpkgs.config.allowUnfree = true;
 
-  programs.firefox.enable = true;
-
   programs.nix-ld = {
     enable = true;
 
@@ -42,12 +40,6 @@
   programs.git.enable = true;
 
   environment.systemPackages = with pkgs; [
-    # Apps
-    vscode
-    google-chrome
-    gnome-screenshot
-    spotify
-
     # System inspection
     pciutils
     usbutils
