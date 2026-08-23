@@ -38,20 +38,28 @@ let
     '';
   };
 
-  rebuild = pkgs.writeShellApplication {
-    name = "rebuild";
-    runtimeInputs = [ nixosConfigAutoCommit ];
+    rebuild = pkgs.writeShellApplication {
+      name = "rebuild";
+      runtimeInputs = [
+        nixosConfigAutoCommit
+        pkgs.git
+      ];
 
-    text = ''
-      repo="/home/kush/nixos-config"
+      text = ''
+        repo="/home/kush/nixos-config"
 
-      /run/wrappers/bin/sudo \
-        /run/current-system/sw/bin/nixos-rebuild \
-        switch --flake "$repo#nixos"
+        cd "$repo"
 
-      nixos-config-autocommit manual-system-commit
-    '';
-  };
+        # Flakes cannot see completely untracked files.
+        git add -A
+
+        /run/wrappers/bin/sudo \
+          /run/current-system/sw/bin/nixos-rebuild \
+          switch --flake "$repo#nixos"
+
+        nixos-config-autocommit manual-system-commit
+      '';
+    };
 in
 {
   home = {
