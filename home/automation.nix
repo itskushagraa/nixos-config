@@ -68,7 +68,7 @@ let
       nixos-config-autocommit manual-system-commit
     '';
   };
-  
+
 in
 {
   home.packages = [

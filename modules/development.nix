@@ -6,11 +6,6 @@
     enableOnBoot = true;
   };
 
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-  };
-
   environment.systemPackages = with pkgs; [
     gh
     nodejs_22

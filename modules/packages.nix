@@ -57,8 +57,6 @@
     fd
     eza
     bat
-    direnv
-    nix-direnv
 
     # CLI utilities
     jq
