@@ -200,7 +200,7 @@
     gh
     nodejs_22
     pnpm
-    python312
+    python3
     uv
     gcc
     clang
