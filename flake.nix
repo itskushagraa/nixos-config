@@ -34,5 +34,9 @@
           }
         ];
       };
+
+      formatter.${system} = nixpkgs.legacyPackages.${system}.nixfmt-tree;
+
+      checks.${system}.nixos = self.nixosConfigurations.nixos.config.system.build.toplevel;
     };
 }
