@@ -42,6 +42,7 @@ let
     runtimeInputs = [
       nixosConfigAutoCommit
       pkgs.git
+      pkgs.nix
     ];
 
     text = ''
@@ -49,9 +50,17 @@ let
 
       cd "$repo"
 
-      # Make new flake files visible during evaluation.
+      # Make newly created flake files visible.
       git add -A
 
+      # Format all Nix files, then stage the formatting changes.
+      nix fmt
+      git add -A
+
+      # Validate the complete system without activating it.
+      nix flake check
+
+      # Build and activate the validated configuration.
       /run/wrappers/bin/sudo \
         /run/current-system/sw/bin/nixos-rebuild \
         switch --flake "$repo#nixos"
@@ -59,6 +68,7 @@ let
       nixos-config-autocommit manual-system-commit
     '';
   };
+  
 in
 {
   home.packages = [
