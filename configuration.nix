@@ -5,10 +5,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ./modules/maintenance.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
