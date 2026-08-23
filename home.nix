@@ -58,7 +58,7 @@ in
     username = "kush";
     homeDirectory = "/home/kush";
     stateVersion = "26.05";
-
+    # User applications managed through Home Manager.
     packages =
       (with pkgs; [
         kitty
