@@ -49,7 +49,7 @@ let
         /run/current-system/sw/bin/nixos-rebuild \
         switch --flake "$repo#nixos"
 
-      nixos-config-autocommit system
+      nixos-config-autocommit manual-system-commit
     '';
   };
 in
@@ -78,8 +78,7 @@ in
 
     Service = {
       Type = "oneshot";
-      ExecStart =
-        "${nixosConfigAutoCommit}/bin/nixos-config-autocommit backup";
+      ExecStart = "${nixosConfigAutoCommit}/bin/nixos-config-autocommit auto-backup-commit";
     };
   };
 
