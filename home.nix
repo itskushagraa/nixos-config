@@ -3,6 +3,7 @@
 {
   imports = [
     ./home/automation.nix
+    ./home/shell.nix
   ];
 
   home = {

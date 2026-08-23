@@ -36,15 +36,9 @@
     ];
   };
 
-  programs.zsh = {
-    enable = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
-  };
+  # Zsh must remain available as the user's login shell.
+  programs.zsh.enable = true;
 
-  programs.starship.enable = true;
-  programs.zoxide.enable = true;
-  programs.fzf.keybindings = true;
   programs.git.enable = true;
 
   environment.systemPackages = with pkgs; [
@@ -71,9 +65,6 @@
     fd
     eza
     bat
-    fzf
-    zoxide
-    starship
     direnv
     nix-direnv
 
