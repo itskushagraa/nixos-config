@@ -100,13 +100,13 @@
       nspr
       dbus
       expat
-      xorg.libX11
-      xorg.libXcomposite
-      xorg.libXdamage
-      xorg.libXext
-      xorg.libXfixes
-      xorg.libXrandr
-      xorg.libxcb
+      libx11
+      libxcomposite
+      libxdamage
+      libxext
+      libxfixes
+      libxrandr
+      libxcb
       libxkbcommon
       alsa-lib
       atk
@@ -163,6 +163,7 @@
     google-chrome
     gnome-screenshot
     spotify
+    discord
 
     # System inspection
     pciutils
